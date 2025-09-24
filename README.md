@@ -1,47 +1,42 @@
-<div align="center">
-<img alt="Portfolio" src="https://github.com/dillionverma/portfolio/assets/16860528/57ffca81-3f0a-4425-b31d-094f61725455" width="90%">
-</div>
+# Portfolio
 
-# Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdillionverma%2Fportfolio)
+Personal portfolio website built with Next.js.
 
-Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
+**Live Site:** [vamshik.tech](https://vamshik.tech)
 
-# Features
+## About
 
-- Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+19-year-old tech enthusiast from Mysore, India. Currently pursuing B.Tech in Artificial Intelligence & Machine Learning at Vidyavardhaka College Of Engineering (2024-2028).
 
-# Getting Started Locally
+## Tech Stack
 
-1. Clone this repository to your local machine:
+- Next.js 14
+- TypeScript
+- TailwindCSS
+- Shadcn/UI
+- Framer Motion
+- MDX
 
-   ```bash
-   git clone https://github.com/dillionverma/portfolio
-   ```
+## Getting Started
 
-2. Move to the cloned directory
+```bash
+git clone https://github.com/VamshikPatel/portfolio.git
+cd portfolio
+pnpm install
+pnpm dev
+```
 
-   ```bash
-   cd portfolio
-   ```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-3. Install dependencies:
+## Configuration
 
-   ```bash
-   pnpm install
-   ```
+Update personal information in `src/data/resume.tsx`.
 
-4. Start the local Server:
+## Contact
 
-   ```bash
-   pnpm dev
-   ```
+- Website: [vamshik.tech](https://vamshik.tech)
+- Email: [iamvamshik7@gmail.com](mailto:iamvamshik7@gmail.com)
+- LinkedIn: [Vamshik Patela ES](https://www.linkedin.com/in/vamshik-patela-es-686151327)
+- Twitter: [@Vamshiktwt](https://x.com/Vamshiktwt)
+- GitHub: [@VamshikPatel](https://github.com/VamshikPatel)
 
-5. Open the [Config file](./src/data/resume.tsx) and make changes
-
-# License
-
-Licensed under the [MIT license](https://github.com/dillionverma/portfolio/blob/main/LICENSE.md).
