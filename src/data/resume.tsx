@@ -8,7 +8,7 @@ export const DATA = {
   location: "Mysore, India",
   locationLink: "https://www.google.com/maps/place/mysore",
   description:
-    "19 year old something guy, Very active on Twitter(X)",
+    "19 year old guy, Very active on Twitter(X)",
   summary:
     "a strong passion for technology. Outside academics, I love exploring history, following football, and reading great books.",
   avatarUrl: "/me.jpg",
