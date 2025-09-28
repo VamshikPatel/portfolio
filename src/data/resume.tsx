@@ -8,7 +8,7 @@ export const DATA = {
   location: "Mysore, India",
   locationLink: "https://www.google.com/maps/place/mysore",
   description:
-    "19 year old something guy. Very active on X.",
+    "19 year old something guy, Very active on Twitter(X)",
   summary:
     "a strong passion for technology. Outside academics, I love exploring history, following football, and reading great books.",
   avatarUrl: "/me.jpg",
@@ -37,7 +37,7 @@ export const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "www.linkedin.com/in/vamshik-patela-es-686151327",
+        url: "https://www.linkedin.com/in/vamshik-patela-es-686151327/",
         icon: Icons.linkedin,
 
         navbar: true,
@@ -60,6 +60,12 @@ export const DATA = {
         url: "mailto:iamvamshik7@gmail.com",
         icon: Icons.email,
 
+        navbar: true,
+      },
+      Discord: {
+        name: "Discord",
+        url: "https://discord.com/users/1277205781732659320",
+        icon: Icons.discord,
         navbar: true,
       },
     },
