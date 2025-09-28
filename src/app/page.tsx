@@ -143,7 +143,7 @@ export default function Page() {
                   href={DATA.contact.social.X.url}
                   className="text-blue-500 hover:underline"
                 >
-                  Twitter
+                  X
                 </Link>{" "}
                 and I&apos;ll respond whenever I can.
               </p>
