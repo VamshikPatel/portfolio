@@ -1,0 +1,87 @@
+---
+title: "Building ResearchPal: From Idea to Deployment"
+publishedAt: "2025-11-06"
+summary: "My first post on my new blog."
+---
+
+**Introduction:**
+
+Three weeks ago, I thought integrating an API was just copy-pasting an endpoint. Today, I have a fully deployed research tool with battle scars from every CORS error imaginable.
+ResearchPal started as a weekend project to make a cleaner research interface powered by Perplexity's API. What I got was an intensive crash course in full-stack development, deployment nightmares, and why environment variables exist.
+If you're a student developer who has built React apps locally and never pushed them live, this is your roadmap. I'll walk you through every mistake I made so you don't have to.
+
+**Project Genesis**
+
+**Why Build Another Research Tool?**
+
+I spent a lot of time on research for college projects, tabbing around and losing context. So I wanted something minimal: just a search bar, clean results, and dark mode that doesn't burn my eyes at 2 AM. No clutter, no distractions.
+Choosing the Tech Stack
+React and Vite became obvious choices: the former because Vite's dev server is really fast, and I was comfortable with the latter already. In API, Perplexity offered just what I needed: comprehensive search results with proper citations.
+I initialized the project, set up basic routing, and had a minimal UI running in about an hour. That's when the real problems started.
+Development Journey
+
+**Phase 1: The UI That Almost Worked**
+
+I modeled the interface after Perplexity's design: full-screen layout, centered search bar, and smoothly fading in results. Added theme toggle, because every developer portfolio needs one.
+The component structure was simple: a SearchBar, ResultsDisplay and ThemeToggle. Everything looked perfect on localhost. Time to add the API, right?
+
+**Phase 2: The CORS Nightmare**
+
+My first try at it was embarrassingly simple fetch the API directly from the frontend. Hit enter, opened DevTools, and there it was in angry red:
+"Access to fetch has been blocked by CORS policy."
+Spent two days fighting this. Added headers, changed request methods, questioned my career choices. All to no avail.
+Here's what I learned: You cannot call most APIs directly from frontend code. The browser blocks it for security reasons. Solution? Build a backend proxy server.
+
+**Phase 3: Enter Node.js**
+
+I created an Express server that sits in between my React app and Perplexity's API. The frontend talks to my server, my server talks to Perplexity: CORS solved.
+But now I had a new problem-my API key was hardcoded in the server file. One accidental Git push and anyone could steal it.
+
+**Deployment Battles**
+
+Getting Vercel to Cooperate
+Connected my GitHub repo to Vercel. First deployment failed. Second one, too. The errors were cryptic; the documentation assumed I knew more than I did.
+It finally clicked when I created the vercel.json file, instructing Vercel exactly what to do with my routes. Suddenly it all clicked: the backend worked, the frontend connected, and ResearchPal went online.
+
+**Custom Domain Drama**
+
+Bought a domain, went to connect it, and faced DNS configuration. A records, CNAME records, nameservers all terms I'd heard but never dealt with.
+Followed the Vercel guide step by step. Added records in my domain registrar. Waited 24 hours. Not working yet. Realized I configured the wrong subdomain. Fixed it. Another 24 hours. Finally live.
+
+**Debugging War Stories**
+
+The Phantom Deployment Error
+One commit had broken everything. Vercel kept failing with "Build completed but deployment failed." No clear error message, no obvious cause.
+Turns out, a single environment variable was misspelled in Vercel's dashboard. One underscore instead of a hyphen. Two hours of debugging for a typo.
+
+**API Response Handling**
+
+Sometimes, the API from Perplexity returns unusual structures. My code did not plan for every eventuality. For example, it crashed the first time a search returned no results.
+Added the proper error handling, null checks, and fallback UI states. The app is 100 lines longer but 1000 times more stable.
+
+**Key Takeaways**
+
+**What Worked**
+
+I felt starting with the UI helped me to stay motivated. Having something visual to work with made the backend problems less frustrating.
+Breaking the project into phases, first front-end, then API integration, then deployment kept me from getting overwhelmed.
+The integrated terminal in VS Code saved me from constantly switching windows. Git Bash for commits, npm for dependencies, all in one place.
+What I'd Do Differently
+
+I should have learned about CORS before attempting API integration. Would have saved me two days of confusion.
+Environment variables should have been set up on day one and not after committing my API key to GitHub in a panic.
+Documentation matters. I barely commented my code, and revisiting old files in order to fix bugs was painful.
+Tools That Saved My Life
+
+Vercel's deployment logs are very detailed once you know how to read them. In retrospect, every error made sense.
+Testing API endpoints individually with Postman, before integrating them into the app.
+GitHub version history, when I had to rollback changes which broke everything.
+
+**What's Next for ResearchPal**
+
+The core functionality works, but there's room for improvement. I have been researching shadcn/ui components to make the interface more polished.
+Plan to add search history, bookmarking, and maybe multi-tab support for comparing sources. Each new feature is a new learning opportunity.
+
+**Final Thoughts**
+
+ResearchPal taught me more than any tutorial could. The frustration of deployment errors, the satisfaction of fixing them, the realization that production and localhost are different universes.
