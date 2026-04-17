@@ -104,7 +104,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/researchpal.png",
+      image: "/researchplex.jpg",
       video: "",
     },
     ], 
