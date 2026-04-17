@@ -84,8 +84,8 @@ export const DATA = {
 
   projects: [
     {
-      title: "Researchpal",
-      href: "https://researchpal.vercel.app",
+      title: "ResearchPlex",
+      href: "https://researchplex.vercel.app",
       dates: "Sep 2025 - Present",
       active: true,
       description:
@@ -100,7 +100,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://researchpal.vercel.app",
+          href: "https://researchplex.vercel.app",
           icon: <Icons.globe className="size-3" />,
         },
       ],
